@@ -2,10 +2,10 @@ disp('Question 8')
 close all
 inpic =godthem256;
 threshold=10 %10
-scale=4; %32 
+scale=16; %32 
 ntheta=180; %180
-nlines=10; %20
-verbose=3; %(0 for silent, 1 for plot of lines w. original, 2 for acc image, 3 to include magnitude in calculation) 
+nlines=20; %20
+verbose=1; %(0 for silent, 1 for plot of lines w. original, 2 for acc image, 3 to include magnitude in calculation) 
 
 
 
@@ -23,3 +23,4 @@ gradmagntools = sqrt(outpic);
 % axis normal
 % colormap(gca, hot)
 
+https://github.com/KildoAlias/Computer_Vision.git
