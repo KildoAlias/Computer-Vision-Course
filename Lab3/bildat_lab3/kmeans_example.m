@@ -1,10 +1,10 @@
-K = 9;               % number of clusters used
+K = 4;               % number of clusters used
 L = 20;              % number of iterations
 seed = 8;            % seed used for random initialization
 scale_factor = 1.0;  % image downscale factor
 image_sigma = 1.0;   % image preblurring scale
 
-I = imread('bandrej.jpg');
+I = imread('orange.jpg');
 I = imresize(I, scale_factor);
 Iback = I;
 d = 2*ceil(image_sigma*2) + 1;
