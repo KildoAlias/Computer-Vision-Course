@@ -1,12 +1,11 @@
 function K_centers=init_K_clusters(image,K,seed)
 if nargin<3
     seed='shuffle';
-    disp('Seed set to shuffle')
+    disp('Warning: Seed set to shuffle!')
 end
 rng(seed);
 K_p=floor(K/4);
 K=K-(K_p*4);
-
 [H,W,~]=size(image);
 K_ulx=randi([1,floor(W/2)-1],1,K_p);
 K_uly=randi([1,floor(H/2)-1],1,K_p);

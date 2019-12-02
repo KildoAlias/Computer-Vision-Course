@@ -1,13 +1,15 @@
 function [ segmentation, centers ] = kmeans_segm(image, K, L, seed)
 [H,W,D]=size(image);
 if nargin<4
-    K_centers=init_K_clusters(image,K);
+    K_centers=init_K_clusters(image,K,seed);
 else
     K_centers=init_K_clusters(image,K,seed);
-end
-im_compare=reshape(image,(W*H),D);
+    en
+    
+
+
+im_compare=reshape(image,(W*H),3);
 im_compare=double(im_compare);
-K_centers=double(K_centers');
 
 dist=pdist2(im_compare,K_centers);
 [~,mindist_idx]=min(dist,[],2);
