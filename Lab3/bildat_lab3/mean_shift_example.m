@@ -1,10 +1,11 @@
+close all
 scale_factor = 0.5;       % image downscale factor
-spatial_bandwidth = 10.0;  % spatial bandwidth
-colour_bandwidth = 5.0;   % colour bandwidth
+spatial_bandwidth = 4;  % spatial bandwidth
+colour_bandwidth = 30.0;   % colour bandwidth
 num_iterations = 40;      % number of mean-shift iterations
 image_sigma = 1.0;        % image preblurring scale
 
-I = imread('tiger1.jpg');
+I = imread('orange.jpg');
 I = imresize(I, scale_factor);
 Iback = I;
 d = 2*ceil(image_sigma*2) + 1;
