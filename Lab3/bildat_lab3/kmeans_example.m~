@@ -85,7 +85,7 @@ title('Error in centers compared to L=500')
 %% change K
 close all
 clear all
-Kv = [7,10];               % number of clusters used
+Kv = [3,6,7,10];               % number of clusters used
 L = 20 ;            % number of iterations
 seed = 0;            % seed used for random initialization
 scale_factor = 1;  % image downscale factor
@@ -93,7 +93,7 @@ image_sigma = 1.0;   % image preblurring scale
 
 figure()
 for i=1:length(Kv)
-K=Kv(i);
+K=Kv(i)
 I = imread('tiger1.jpg');
 I = imresize(I, scale_factor);
 Iback = I;
