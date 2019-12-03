@@ -26,7 +26,7 @@ dist=pdist2(im_compare,mean_center);
 [~,mindist_idx]=min(dist,[],2);
 end
 centers=mean_center;
-im_compare=round(single(im_compare));
-im_compare = prod(im_compare, 2);
-segmentation=reshape(im_compare,H,W,1);
+% im_compare=round(single(im_compare));
+% im_compare = prod(im_compare, 2);
+segmentation=reshape(mindist_idx,H,W,1);
 end

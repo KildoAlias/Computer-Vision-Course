@@ -1,7 +1,7 @@
 %%
 close all
 clear all
-K=7;     % number of clusters used
+K=10;     % number of clusters used
 L = 20 ;            % number of iterations
 seed = 0;            % seed used for random initialization
 scale_factor = 1;  % image downscale factor
@@ -27,19 +27,10 @@ imshow(Inew)
 % imwrite(I,'result/kmeans2.png')
 
 
-
-
-
-
-
-
-
-
-
 %% Change L
 close all
 clear all
-K = 7;               % number of clusters used
+K = 10;               % number of clusters used
 Lv = [20,30,40,50,100];              % number of iterations
 seed = 0;            % seed used for random initialization
 scale_factor = 1;  % image downscale factor
@@ -69,7 +60,7 @@ end
 Inew = mean_segments(Iback, segm);
 I = overlay_bounds(Iback, segm);
 subplot(1,length(Lv),i)
-imshow(Inew)
+imshow(I)
 end
 error=nansum(centers_err,2);
 figure()
