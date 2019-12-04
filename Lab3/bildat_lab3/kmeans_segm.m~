@@ -31,13 +31,9 @@ for i=1:L
        end
     end    
 dist=pdist2(im_compare,mean_center);
-nanvalues=isnan(dist);
-nanvalues=nanvalues(1,:);
-dist=dist(:,nanvalues==0);
-mean_center=mean_center';
-nancenters=isnan(mean_center);
-nancenters=nancenters(1,:);
-mean_center=mean_center(:,nancenters==0)';
+
+for 
+
 
 [~,mindist_idx]=min(dist,[],2);
 end

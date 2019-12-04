@@ -1,5 +1,5 @@
 function prob = mixture_prob(image, K, L, mask)
-seed=2;
+seed=50;
 rng(seed)
 image=single(image);
 mask=single(mask);
@@ -9,8 +9,8 @@ mask_re=reshape(mask,W*H,1);
 image_masked=im_re(mask_re==1,:);
 [segm,centers] = kmeans_segm(image_masked, K, L,seed);
 K=size(centers,1);
-[W2,H2]=size(segm);
-w_norm=W2*H2;
+[W,H]=size(segm);
+w_norm=W*H;
 
 for k=1:K
     Qv(:,:,k)=eye(3,3)*rand()*256;
@@ -55,15 +55,19 @@ end
 
 
 for k=1:K
-  
+    mean=mean(k,:);
     Q=Qv(:,:,k);
-    diff = bsxfun(@minus, im_re, mean(k,:));
+    diff = bsxfun(@minus, im_re, mean);
     di=sum(diff*inv(Q).*diff,2);
     g=(1/(sqrt((2*pi)^3*det(Q))))*exp((-1/2)*di);
-    p2(k,:)=w(k).*g;
+    p(k,:)=w(k).*g;
 end
-prob=sum(p2,1);
+prob=sum(p,2);
 
+
+
+
+prob=1;
 
 
 end
