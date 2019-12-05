@@ -8,6 +8,9 @@ mask = uint8([zeros(area(2)-1,w); zeros(dh,area(1)-1), ones(dh,dw), ...
 	     zeros(dh,w-area(3)); zeros(h-area(4),w)]);
 Ivec = single(reshape(I, size(I,1)*size(I,2), 3));
 
+box=overlay_bounds(I,mask);
+subplot(2,2,,4)
+imshow(box)
 
 grey = single(rgb2gray(I));
 h = fspecial('gaussian', [7,7], 0.5);

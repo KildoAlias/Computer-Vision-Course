@@ -1,11 +1,11 @@
 close all
 scale_factor = 0.5;          % image downscale factor
 area = [180, 150, 530, 300 ]; % image region to train foreground with
-K = 3;                      % number of mixture components
+K = 4;                      % number of mixture components
 alpha = 20.0;                 % maximum edge cost
 sigma = 10.0;                % edge cost decay factor          K=16, alpha=20, sigma=10
 figure()
-I = imread('tiger1.jpg');
+I = imread('tiger3.jpg');
 I = imresize(I, scale_factor);
 Iback = I;
 

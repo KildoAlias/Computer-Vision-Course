@@ -1,5 +1,5 @@
 function prob = mixture_prob(image, K, L, mask)
-seed=2;
+seed=1;
 rng(seed)
 image=single(image);
 mask=single(mask);
@@ -13,7 +13,7 @@ K=size(centers,1);
 w_norm=W2*H2;
 
 for k=1:K
-    Qv(:,:,k)=eye(3,3)*rand()*256;
+    Qv(:,:,k)=eye(3,3)*(rand()*256);
     w(k)=length(find(segm==k));
     w(k)=w(k)/w_norm;
 end
